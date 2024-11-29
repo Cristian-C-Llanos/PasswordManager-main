@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Contraseña</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <nav class="bg-indigo-600 text-white p-4 shadow-md">
+        <div class="container mx-auto">
+            <h1 class="text-2xl font-bold">Editar Contraseña</h1>
+        </div>
+    </nav>
+
+    <main class="container mx-auto mt-8 px-4 flex-grow">
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <form action="/update/{{ password.id }}" method="POST">
+                <div class="mb-4">
+                    <label for="service" class="block text-sm font-medium text-gray-700">Servicio</label>
+                    <input type="text" id="service" name="service" class="w-full border-gray-300 rounded-md" value="{{ password.service }}" disabled>
+                </div>
+                <div class="mb-4">
+                    <label for="username" class="block text-sm font-medium text-gray-700">Usuario</label>
+                    <input type="text" id="username" name="username" class="w-full border-gray-300 rounded-md" value="{{ password.username }}" disabled>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Nueva Contraseña</label>
+                    <input type="password" id="password" name="password" class="w-full border-gray-300 rounded-md" required>
+                </div>
+                <div class="flex justify-end">
+                    <a href="/" class="mr-4 text-gray-600 hover:underline">Cancelar</a>
+                    <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Gestor de Contraseñas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
